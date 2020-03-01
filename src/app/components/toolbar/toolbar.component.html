@@ -5,8 +5,66 @@
         Salir
     </a>
 </mat-toolbar>
+<!--Menús-->
 <mat-toolbar *ngIf="showToolbar" color="primary">
     <div fxFlex="row" fxLayoutAlign="start center" fxLayoutGap="15px">
-        <button mat-button mat-raised-button [routerLink]="['/logs']">Ver bitácora</button>
+
+        <button mat-button [matMenuTriggerFor]="pilots">Pilotos</button>
+        <mat-menu #pilots="matMenu">
+            <button mat-menu-item [routerLink]="['/pilot']">
+                <mat-icon>person_add</mat-icon>
+                Registrar piloto
+            </button>
+            <button mat-menu-item [routerLink]="['/pilot/list']">
+                <mat-icon>people</mat-icon>
+                Ver pilotos
+            </button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="trucks">Camiones</button>
+        <mat-menu #trucks="matMenu">
+            <button mat-menu-item [routerLink]="['/truck']">
+                <mat-icon>commute</mat-icon>
+                Registrar camión
+            </button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="routes">Rutas</button>
+        <mat-menu #routes="matMenu">
+            <button mat-menu-item [routerLink]="['/route']">
+                <mat-icon>forward</mat-icon>
+                Registrar ruta
+            </button>
+            <button mat-menu-item [routerLink]="['/route/location']">
+                <mat-icon>home_work</mat-icon>
+                Registrar Ubicación
+            </button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="packages">Paquetes</button>
+        <mat-menu #packages="matMenu">
+            <button mat-menu-item [routerLink]="['/package']">
+                <mat-icon>add_box</mat-icon>
+                Registrar paquete
+            </button>
+            <button mat-menu-item [routerLink]="['/package/assign']">
+                <mat-icon>home_work</mat-icon>
+                Designar a un origen
+            </button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="shipping">Envíos</button>
+        <mat-menu #shipping="matMenu">
+            <button mat-menu-item [routerLink]="['/shipping']">
+                <mat-icon>assignment</mat-icon>
+                Registrar envío
+            </button>
+            <button mat-menu-item [routerLink]="['/shipping/list']">
+                <mat-icon>view_list</mat-icon>
+                Ver envíos
+            </button>
+        </mat-menu>
+
+        <button mat-button [routerLink]="['/logs']">Ver bitácora</button>
     </div>
 </mat-toolbar>

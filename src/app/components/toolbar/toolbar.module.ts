@@ -6,6 +6,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
     declarations: [
@@ -18,6 +20,8 @@ import { MatButtonModule } from '@angular/material/button';
         MatToolbarModule,
         FlexLayoutModule,
         MatButtonModule,
+        MatMenuModule,
+        MatIconModule,
     ],
     exports: [
         ToolbarComponent
