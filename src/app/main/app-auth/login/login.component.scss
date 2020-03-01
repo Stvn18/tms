@@ -1,0 +1,46 @@
+.login {
+    width: 400px;
+    margin: 16px auto;
+    font-size: 16px;
+}
+
+.login-header,
+.login mat-form-field {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.login-triangle {
+    width: 0;
+    margin-right: auto;
+    margin-left: auto;
+    border: 12px solid transparent;
+    border-bottom-color: #28d;
+}
+
+.login-header {
+    background: #28d;
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.login-container {
+    background: #ebebeb;
+    padding: 12px;
+}
+
+.register {
+    color: #2288dd;
+    font-style: italic;
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+
+.login mat-form-field {
+    padding: 10px;
+}

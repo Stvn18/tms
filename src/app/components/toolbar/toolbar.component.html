@@ -1,0 +1,12 @@
+<mat-toolbar class="too" color="primary">
+    <h1>{{title}}</h1>
+    <a *ngIf="showToolbar" class="button fancy-button" (click)="doLogout()">
+        <i class="material-icons">exit_to_app</i>
+        Salir
+    </a>
+</mat-toolbar>
+<mat-toolbar *ngIf="showToolbar" color="primary">
+    <div fxFlex="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <button mat-button mat-raised-button [routerLink]="['/logs']">Ver bitácora</button>
+    </div>
+</mat-toolbar>

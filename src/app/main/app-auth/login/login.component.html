@@ -1,0 +1,38 @@
+<div fxLayout="column" class="login">
+    <div class="login-triangle"></div>
+
+    <h2 class="login-header">Iniciar Sesión</h2>
+
+    <form [formGroup]="loginForm" class="login-container" fxFlex fxLayoutAlign="start center" fxLayout="column">
+        <mat-form-field appearance="outline" fxFlex>
+            <mat-label>Correo Electrónico</mat-label>
+            <input type="email" matInput formControlName="email" autocomplete="off" required>
+            <mat-icon matSuffix>email</mat-icon>
+            <mat-error *ngIf="loginForm.controls['email'].hasError('required')">
+                Campo requerido
+            </mat-error>
+            <mat-error *ngIf="loginForm.controls['email'].hasError('email')">
+                Correo inválido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex>
+            <mat-label>Contraseña</mat-label>
+            <input type="password" matInput formControlName="password"
+                   autocomplete="false" required>
+            <mat-icon matSuffix>enhanced_encryption</mat-icon>
+            <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
+                Campo requerido
+            </mat-error>
+        </mat-form-field>
+        <a class="register" [routerLink]="['/register']">
+            <span>¿No tienes usuario? Regístrate!</span>
+        </a>
+        <button
+            (click)="doLogin()"
+            [disabled]="loginForm.invalid || showProgressBar"
+            mat-raised-button
+            color="primary">
+            Iniciar
+        </button>
+    </form>
+</div>

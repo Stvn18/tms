@@ -1,0 +1,39 @@
+.register {
+    width: 500px;
+    margin: 16px auto;
+    font-size: 16px;
+}
+
+.register-header,
+.register mat-form-field {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.register-header {
+    background: #28d;
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.register-container {
+    background: #ebebeb;
+    padding: 12px;
+}
+
+.login {
+    color: #2288dd;
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+
+.register mat-form-field {
+    padding: 10px;
+}

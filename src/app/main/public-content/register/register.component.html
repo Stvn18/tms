@@ -1,0 +1,50 @@
+<div fxLayout="column" class="register">
+    <h2 class="register-header">Regístrate</h2>
+
+    <form [formGroup]="registerForm" class="register-container" fxFlex fxLayoutAlign="start center" fxLayout="column">
+        <mat-form-field appearance="outline" fxFlex>
+            <mat-label>Nombre</mat-label>
+            <input type="text" matInput formControlName="name" autocomplete="off" required>
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-error *ngIf="registerForm.controls['name'].hasError('required')">
+                Campo requerido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex>
+            <mat-label>Correo Electrónico</mat-label>
+            <input type="email" matInput formControlName="email" autocomplete="off" required>
+            <mat-icon matSuffix>email</mat-icon>
+            <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
+                Campo requerido
+            </mat-error>
+            <mat-error *ngIf="registerForm.controls['email'].hasError('email')">
+                Correo inválido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex>
+            <mat-label>Contraseña</mat-label>
+            <input type="password" matInput formControlName="password" autocomplete="off" required>
+            <mat-icon matSuffix>enhanced_encryption</mat-icon>
+            <mat-error *ngIf="registerForm.controls['password'].hasError('required')">
+                Campo requerido
+            </mat-error>
+            <mat-error *ngIf="registerForm.controls['password'].hasError('pattern')">
+                Debe contener al menos una letra mayúscula,
+                al menos un dígito,
+                sin espacios en blanco,
+                al menos un caracter especial,
+                debe contener al menos 8 caracteres
+            </mat-error>
+        </mat-form-field>
+        <a class="login" [routerLink]="['/auth/login']">
+            <span>¿Ya tienes usuario? Iniciar sesión</span>
+        </a>
+        <button
+            (click)="doRegister()"
+            [disabled]="registerForm.invalid || showProgressBar"
+            mat-raised-button
+            color="primary">
+            Guardar
+        </button>
+    </form>
+</div>
