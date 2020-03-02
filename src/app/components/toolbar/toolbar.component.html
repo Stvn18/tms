@@ -31,10 +31,6 @@
 
         <button mat-button [matMenuTriggerFor]="routes">Rutas</button>
         <mat-menu #routes="matMenu">
-            <button mat-menu-item [routerLink]="['/route']">
-                <mat-icon>forward</mat-icon>
-                Registrar ruta
-            </button>
             <button mat-menu-item [routerLink]="['/route/location']">
                 <mat-icon>home_work</mat-icon>
                 Registrar Ubicación
@@ -46,10 +42,6 @@
             <button mat-menu-item [routerLink]="['/package']">
                 <mat-icon>add_box</mat-icon>
                 Registrar paquete
-            </button>
-            <button mat-menu-item [routerLink]="['/package/assign']">
-                <mat-icon>home_work</mat-icon>
-                Designar a un origen
             </button>
         </mat-menu>
 
