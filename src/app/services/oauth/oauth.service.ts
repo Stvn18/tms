@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { TOKEN_KEY } from '@constants/application';
-import { UserModel, OAuthUserInfoModel } from '@models/user';
+import { UserModel, OAuthUserInfoModel } from '@models/auth/user';
 import { environment } from '@env/environment';
 
 @Injectable()

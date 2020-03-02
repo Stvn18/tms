@@ -7,7 +7,6 @@ import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { LogService } from '@services/common/log.service';
 import { PipesModule } from '@pipes/pipes.module';
 
 const routes: Routes = [
@@ -28,9 +27,6 @@ const routes: Routes = [
         MatListModule,
         MatIconModule,
         PipesModule
-    ],
-    providers: [
-        LogService
     ]
 })
 export class AppLogsModule {

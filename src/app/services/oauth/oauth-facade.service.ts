@@ -2,7 +2,7 @@ import { Injectable, Injector } from '@angular/core';
 import { OauthService } from '@services/oauth/oauth.service';
 import { OauthUserService } from '@services/oauth/oauth-user.service';
 import { Observable } from 'rxjs';
-import { OAuthUserInfoModel, UserModel } from '@models/user';
+import { OAuthUserInfoModel, UserModel } from '@models/auth/user';
 
 @Injectable()
 export class OauthFacadeService {

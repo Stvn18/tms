@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LogService } from '@services/common/log.service';
-import { LogModel } from '@models/log';
+import { LogService } from '@services/oauth/log.service';
+import { LogModel } from '@models/auth/log';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ApplicationService } from '@services/application/application.service';
 import { Router } from '@angular/router';

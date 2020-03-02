@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { UserModel } from '@models/user';
+import { UserModel } from '@models/auth/user';
 import { environment } from '@env/environment';
 
 @Injectable()

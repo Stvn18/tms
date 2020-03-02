@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AbstractOidcAuthorization } from '@services/abstract-oidc-authorization';
 import { OauthFacadeService } from '@services/oauth/oauth-facade.service';
-import { LogModel } from '@models/log';
+import { LogModel } from '@models/auth/log';
 import { environment } from '@env/environment';
 
 @Injectable()
