@@ -15,8 +15,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
     selector: 'app-create-shipping',
-    templateUrl: './create-shipping.component.html',
-    styleUrls: [ './create-shipping.component.scss' ]
+    templateUrl: './create-shipping.component.html'
 })
 export class CreateShippingComponent implements OnInit {
 
