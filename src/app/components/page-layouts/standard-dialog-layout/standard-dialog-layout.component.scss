@@ -1,0 +1,40 @@
+:host {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+
+    .mat-dialog-content {
+        margin: 0;
+        padding: 10px;
+        position: relative;
+        height: 85%;
+        max-height: 100%;
+    }
+
+    .mat-dialog-content-without-actions {
+        margin: 0;
+        padding: 10px;
+        position: relative;
+        height: 90%;
+        max-height: 100%;
+    }
+
+    .mat-dialog-title {
+        margin: 0;
+        padding: 10px;
+        background-color: #3f51b5;;
+
+        h1 {
+            margin: 0;
+            color: white;
+        }
+    }
+
+    .mat-dialog-actions {
+        margin: 0;
+        padding: 10px;
+        position: relative;
+    }
+}

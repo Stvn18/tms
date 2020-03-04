@@ -1,0 +1,109 @@
+<app-standard-page-layout
+    pageTitle="Registrar nuevo envío"
+    [floatActionButtonDisabled]="shippingForm.invalid || packages.length === 0"
+    [floatActionButtonIcon]="'save'"
+    (floatActionButtonOutput)="saveShipping()">
+
+    <!--FORM-->
+    <form name="notificationScheduleForm" [formGroup]="shippingForm" fxLayout="column" fxFlex="1 0 auto">
+
+        <div fxLayout="column">
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+                <mat-form-field appearance="outline" fxFlex>
+                    <mat-label>Camión</mat-label>
+                    <mat-select formControlName="trunk" required>
+                        <mat-option *ngFor="let trunk of trunks" [value]="trunk">
+                            Código: {{trunk.code}} - Piloto: {{trunk.pilot?.name}} {{trunk.pilot?.lastName}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+                <mat-form-field appearance="outline" fxFlex="50">
+                    <mat-label>Orígen</mat-label>
+                    <mat-select formControlName="origin" required>
+                        <mat-option *ngFor="let origen of origins" [value]="origen">
+                            {{origen.comments}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="50">
+                    <mat-label>Destino</mat-label>
+                    <mat-select formControlName="destination" required>
+                        <mat-option *ngFor="let destination of destinations" [value]="destination">
+                            {{destination.comments}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+                <mat-form-field appearance="outline" fxFlex="50">
+                    <mat-label>Teléfono de referencia</mat-label>
+                    <input matInput type="tel" formControlName="phoneReference" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="50">
+                    <mat-label>Tipo de pago</mat-label>
+                    <mat-select formControlName="paymentType" required>
+                        <mat-option value="0">EFECTIVO</mat-option>
+                        <mat-option value="1">TARJETA DE CRÉDITO</mat-option>
+                        <mat-option value="2">AL CRÉDITO</mat-option>
+                    </mat-select>
+                    <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+                <mat-form-field appearance="outline" fxFlex>
+                    <mat-label>Total del envío</mat-label>
+                    <input matInput type="number" formControlName="total" required>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+                <button mat-icon-button (click)="createPackage()">
+                    <mat-icon>add_circle</mat-icon>
+                    Agregar paquete
+                </button>
+            </div>
+
+            <!--Detalle -->
+            <div fxLayout="column" fxLayoutAlign="start center">
+                <table mat-table [dataSource]="packages" class="mat-elevation-z8">
+                    <!-- Code Column -->
+                    <ng-container matColumnDef="code">
+                        <th mat-header-cell *matHeaderCellDef> Código</th>
+                        <td mat-cell *matCellDef="let package"> {{package.code}} </td>
+                        <td mat-footer-cell *matFooterCellDef></td>
+                    </ng-container>
+
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="weight">
+                        <th mat-header-cell *matHeaderCellDef> Peso</th>
+                        <td mat-cell *matCellDef="let package"> {{package.weight}} </td>
+                        <td mat-footer-cell *matFooterCellDef> Total de paquetes</td>
+                    </ng-container>
+
+                    <!-- Description Column -->
+                    <ng-container matColumnDef="description">
+                        <th mat-header-cell *matHeaderCellDef> Descripción</th>
+                        <td mat-cell *matCellDef="let package"> {{package.description}} </td>
+                        <td mat-footer-cell *matFooterCellDef> {{getTotalPackages()}} </td>
+                    </ng-container>--
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+                </table>
+            </div>
+
+        </div>
+
+    </form>
+    <!--/FORM-->
+
+</app-standard-page-layout>

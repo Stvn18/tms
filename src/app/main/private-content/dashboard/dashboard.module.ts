@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PrivateContentGuard } from '@guards/private-content.guard';
+import { MatCardModule } from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
     {
@@ -16,7 +18,9 @@ const routes: Routes = [
     declarations: [ DashboardComponent ],
     imports: [
         CommonModule,
-        RouterModule.forChild(routes)
+        RouterModule.forChild(routes),
+        MatCardModule,
+        FlexLayoutModule
     ]
 })
 export class DashboardModule {

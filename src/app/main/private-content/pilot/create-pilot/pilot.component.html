@@ -1,0 +1,62 @@
+<app-standard-dialog-layout
+    dialogTitle="Crear piloto"
+    [loading]="loading"
+    [cancelActionButtonDisabled]="false"
+    [actionButtonDisabled]="pilotForm.invalid"
+    dialogActionButtonTranslateKey="Guardar"
+    (dialogActionButtonOutput)="onSavePilot()"
+    (dialogCancelButtonOutput)="onCancel()">
+
+    <!--FORM-->
+    <form name="notificationScheduleForm" [formGroup]="pilotForm" fxLayout="column" fxFlex="1 0 auto">
+
+        <div fxLayout="column" style="padding: 5px;">
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+                <mat-form-field appearance="outline" fxFlex="50">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput type="text" formControlName="name" required>
+                    <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="50">
+                    <mat-label>Apellido</mat-label>
+                    <input matInput type="text" formControlName="lastName" required>
+                    <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+                <mat-form-field appearance="outline" fxFlex="50">
+                    <mat-label>Edad</mat-label>
+                    <input matInput type="number" formControlName="age" required>
+                    <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="50">
+                    <mat-label>Teléfono</mat-label>
+                    <input matInput type="phone" formControlName="phone" required>
+                    <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+                <mat-form-field appearance="outline" fxFlex="50">
+                    <mat-label>Identificación</mat-label>
+                    <input matInput type="text" formControlName="identification" required>
+                    <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="pr-4" fxFlex="50">
+                    <mat-label>Tipo de licencia</mat-label>
+                    <mat-select formControlName="licenceType">
+                        <mat-option value="'A'">Tipo A</mat-option>
+                        <mat-option value="'B'">Tipo B</mat-option>
+                        <mat-option value="'C'">Tipo C</mat-option>
+                    </mat-select>
+                    <mat-error>Campo requerido</mat-error>
+                </mat-form-field>
+            </div>
+
+        </div>
+
+    </form>
+    <!--/FORM-->
+
+</app-standard-dialog-layout>

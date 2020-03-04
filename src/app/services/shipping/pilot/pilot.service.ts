@@ -26,4 +26,11 @@ export class PilotService extends AbstractOidcAuthorization {
             .toPromise();
     }
 
+    getPilotsUnassigned(): Promise<Array<PilotModel>> {
+        const url = `${ environment.api.baseUrlTmsWS }pilot/all/unassigned`;
+        return this.http
+            .get<Array<PilotModel>>(url, { headers: this.authorizationHeader })
+            .toPromise();
+    }
+
 }

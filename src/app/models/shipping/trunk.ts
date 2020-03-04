@@ -7,5 +7,5 @@ export interface TrunkModel {
     code: string;
     year: number;
     capacity?: number;
-    pilot: PilotModel;
+    pilot?: PilotModel;
 }

@@ -1,0 +1,46 @@
+<!--TITLE-->
+<div mat-dialog-title fxLayout="row" fxLayoutAlign="space-between center">
+    <h1 fxFlex *ngIf="showTitleText">{{dialogTitle}}</h1>
+    <button mat-icon-button (click)="onCancel()" title="Cerrar">
+        <mat-icon class="action-icon-button" aria-label="action button icon">close</mat-icon>
+    </button>
+</div>
+<!--/TITLE-->
+<mat-progress-bar mode="indeterminate" *ngIf="loading" color="primary"></mat-progress-bar>
+
+<!--CONTENT-->
+<div mat-dialog-content
+     [ngClass]="{'mat-dialog-content-without-actions': !showDialogActions}"
+     fxLayout="column">
+
+    <!--Template para el contenido del diálogo-->
+    <ng-template cdk-portal>
+        <ng-content></ng-content>
+    </ng-template>
+
+    <div class="standard-dialog-layout-content" cdkPortalHost></div>
+
+</div>
+<!--/CONTENT-->
+
+<!--ACTIONS-->
+
+<div mat-dialog-actions fxLayout="row" *ngIf="showDialogActions">
+    <!--Sobreescribe el contenido de las acciones del diálogo-->
+    <ng-template [ngIf]="templateDialogActions">
+        <ng-template [cdkPortalOutlet]="templateDialogActions"></ng-template>
+    </ng-template>
+
+    <div fxFlex fxLayoutAlign="end center" *ngIf="!templateDialogActions">
+        <button mat-stroked-button color="primary" [disabled]="cancelActionButtonDisabled || loading"
+                (click)="onCancel()" *ngIf="showCancelButton" title="Cancelar"
+                style="margin-right: 15px;">
+            Cancelar
+        </button>
+        <button mat-stroked-button color="primary" [disabled]="actionButtonDisabled || loading"
+                (click)="onActionButton()" *ngIf="showActionButton" title="{{dialogActionButtonTranslateKey}}">
+            {{dialogActionButtonTranslateKey}}
+        </button>
+    </div>
+</div>
+<!--/ACTIONS-->

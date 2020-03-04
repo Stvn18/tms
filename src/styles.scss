@@ -30,6 +30,20 @@ p {
     font-size: 14px;
 }
 
+table {
+    border: solid 1px #aaa999;
+    width: 100%
+}
+
+table tr th {
+    border: solid 1px #aaa999;
+}
+
+table tr td {
+    border: solid 1px #aaa999;
+    text-align: center;
+}
+
 /* Hyperlink */
 
 a {
@@ -122,4 +136,10 @@ label {
 .snackbar-error {
     color: white;
     background: red;
+}
+
+.mat-dialog-without-padding {
+    .mat-dialog-container {
+        padding: 0;
+    }
 }

@@ -10,8 +10,8 @@ export interface LocationModel {
 
 export interface CountryModel {
     _id?: string;
-    code: string;
-    name: string;
+    code?: string;
+    name?: string;
 }
 
 export interface DepartmentModel {

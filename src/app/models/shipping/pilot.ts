@@ -6,4 +6,5 @@ export interface PilotModel {
     phone: string;
     identification: string;
     licenceType: string;
+    assigned?: boolean;
 }
